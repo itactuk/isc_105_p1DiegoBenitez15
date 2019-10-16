@@ -23,10 +23,11 @@ MU_TEST(test_MatrizCuadrada1PS00) {
             {6, 8},
             {2, 5}
     };// El 6 es unico pto de silla (mayor en columna, menor en fila)
-    RESULTADOS res = puntos_de_silla(2, 2, matriz);
+
+    RESULTADOS res = puntos_de_silla(2, 2,matriz);
     mu_assert_int_eq(res.cantidad_resultados_indices, 1);
-    mu_assert_int_eq(0, res.indices[0].x);
-    mu_assert_int_eq(0, res.indices[0].y);
+    mu_assert_int_eq(1, res.indices[0].x);
+    mu_assert_int_eq(1, res.indices[0].y);
 }
 
 MU_TEST(test_MatrizCuadrada1PS10) {

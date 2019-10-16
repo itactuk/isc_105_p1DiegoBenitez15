@@ -26,6 +26,30 @@ struct producto busqueda_binaria(int id, struct producto productos[], int n){
  * @param is es el indice superior
  * @return
  */
-struct producto _busqueda_binaria_recursiva(int id, struct producto prods[], int ii, int is){
+struct producto _busqueda_binaria_recursiva(int id, struct producto prods[],int ii, int is){
+    int med;
+    med = (ii + is) / 2;
 
+    if(ii > is)
+    {
+        prods[ii].id = -1;
+        return prods[ii];
+    }
+    else if(is == med ||ii == med)
+    {
+        prods[ii].id = -1;
+        return prods[ii];
+    }
+    else if(id == prods[med].id)
+    {
+        return prods[med];
+    }
+    else if(id < prods[med].id)
+    {
+        _busqueda_binaria_recursiva(id,prods,ii,med);
+    }
+    else if(id > prods[med].id)
+    {
+        _busqueda_binaria_recursiva(id,prods,med,is);
+    }
 }

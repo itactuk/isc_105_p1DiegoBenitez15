@@ -10,7 +10,9 @@
 
 MU_TEST(test_CadenaLLenaPar) {
     char micadena[] = {'a', 'b', 'c', '\0'};
-    invierte(micadena);
+    int ni = 0;
+    int nf = 3;
+    invierte(micadena,ni,nf);
     mu_assert_int_eq('c', micadena[0]);
     mu_assert_int_eq('b', micadena[1]);
     mu_assert_int_eq('a', micadena[2]);
@@ -19,7 +21,9 @@ MU_TEST(test_CadenaLLenaPar) {
 
 MU_TEST(test_CadenaLLenaImpar) {
     char micadena[] = {'a', 'b', 'c', 'd', '\0'};
-    invierte(micadena);
+    int ni = 0;
+    int nf = 4;
+    invierte(micadena,ni,nf);
     mu_assert_int_eq('d', micadena[0]);
     mu_assert_int_eq('c', micadena[1]);
     mu_assert_int_eq('b', micadena[2]);
@@ -29,7 +33,9 @@ MU_TEST(test_CadenaLLenaImpar) {
 
 MU_TEST(test_CadenaVacia) {
     char micadena[] = {'\0'};
-    invierte(micadena);
+    int ni = 0;
+    int nf = 0;
+    invierte(micadena,ni,nf);
     mu_assert_int_eq('\0', micadena[0]);
 }
 
